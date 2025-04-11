@@ -237,11 +237,13 @@ footer {
     width: 90%;
   }
 
-  .social {
-    flex-direction: column;
-    gap: 1rem;
-    align-items: center;
-  }
+  .social { 
+      flex-direction: column;
+      gap: 1rem;
+      align-items: center; /* Garante que os botões fiquem centralizados */
+      justify-content: center; /* Centraliza os botões verticalmente */
+      margin: 0 auto; /* Centraliza horizontalmente */
+    }
 
   .btn {
     width: 90%;
