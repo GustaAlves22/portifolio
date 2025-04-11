@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfólio Profissional</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <header class="header">
+    <h1 class="logo">&lt;Gustavo Alves Alberti&gt;</h1>
+    <nav class="nav">
+      <button onclick="abrirAba('sobre')"><i class="fas fa-user"></i> Sobre</button>
+      <button onclick="abrirAba('projetos')"><i class="fas fa-code"></i> Projetos</button>
+      <button onclick="abrirAba('contato')"><i class="fas fa-envelope"></i> Contato</button>
+    </nav>
+  </header>
+
+  <main>
+    <section id="sobre" class="tab active">
+      <div class="content">
+        <h2 class="titulo"><i class="fas fa-user fa-bounce"></i> Sobre Mim</h2>
+        <p>
+          Olá! Meu nome é <strong>Gustavo</strong> e sou desenvolvedor front-end apaixonado por criar experiências digitais interativas e responsivas. Trabalho com tecnologias modernas como <span class="highlight">HTML</span>, <span class="highlight">CSS</span>, <span class="highlight">JavaScript</span> e muito mais.
+        </p>
+        <p>
+          Tenho foco em performance, design e acessibilidade. Curioso por natureza, estou sempre buscando evoluir minhas habilidades e contribuir para projetos criativos e inovadores.
+        </p>
+      </div>
+    </section>
+
+    <!-- Aba Projetos -->
+    <section id="projetos" class="tab">
+      <h2 class="titulo"><i class="fas fa-code fa-beat"></i> Projetos</h2>
+      <div class="cards" id="projetos-container">
+        <!-- Os projetos serão inseridos aqui pelo JavaScript -->
+      </div>
+    </section>
+
+    <section id="contato" class="tab">
+      <div class="content">
+        <h2 class="titulo"><i class="fas fa-envelope fa-shake"></i> Contato</h2>
+        <p>Me encontre nas redes sociais abaixo:</p>
+        <div class="social modern-contact">
+          <a href="https://www.instagram.com/gustavoalberti_17/" target="_blank" class="btn instagram">
+            <i class="fab fa-instagram fa-beat-fade"></i>
+            <span>Instagram</span>
+          </a>
+          <a href="https://www.linkedin.com/in/gustavo-alves-alberti-21aa98325/" target="_blank" class="btn linkedin">
+            <i class="fab fa-linkedin fa-beat-fade"></i>
+            <span>LinkedIn</span>
+          <a href="https://github.com/gustaalves22" target="_blank" class="btn github">
+            <i class="fab fa-github fa-beat-fade"></i>
+            <span>GitHub</span>
+          </a>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Gustavo alves. Todos os direitos reservados.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
