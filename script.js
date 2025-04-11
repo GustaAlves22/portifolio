@@ -24,7 +24,7 @@ function showTab(tabId) {
     const projetosContainer = document.getElementById('projetos-container');
     projetosContainer.innerHTML = `
       <div class="card">
-        <h3>Ludo Game</h3>
+        <h3>Jogo de ludo</h3>
         <p>Jogo interativo de Ludo desenvolvido com JavaScript.</p>
         <a href="http://GameExpoSenac.github.io" target="_blank">Ver Projeto</a>
       </div>
