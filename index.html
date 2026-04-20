@@ -3,65 +3,218 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portfólio Profissional</title>
+  <title>Gustavo Alves Alberti — Dev Frontend</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;700;800&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
+
+  <div id="cursor-ball"></div>
+
   <header class="header">
-    <h1 class="logo">&lt;Gustavo Alves Alberti&gt;</h1>
-    <nav class="nav">
-      <button onclick="abrirAba('sobre')"><i class="fas fa-user"></i> Sobre</button>
-      <button onclick="abrirAba('projetos')"><i class="fas fa-code"></i> Projetos</button>
-      <button onclick="abrirAba('contato')"><i class="fas fa-envelope"></i> Contato</button>
-    </nav>
+    <div class="header-inner">
+      <div class="logo-wrap">
+        <span class="logo-bracket">&lt;</span>
+        <span class="logo-name">ツ</span>
+        <span class="logo-bracket">&gt;</span>
+      </div>
+      <nav class="nav">
+        <button class="nav-btn active-btn" onclick="abrirAba('sobre', this)">Sobre</button>
+        <button class="nav-btn" onclick="abrirAba('projetos', this)">Projetos</button>
+        <button class="nav-btn" onclick="abrirAba('skills', this)">Skills</button>
+        <button class="nav-btn" onclick="abrirAba('contato', this)">Contato</button>
+      </nav>
+    </div>
   </header>
 
+  <div class="ticker-wrap">
+    <div class="ticker-track" id="tickerTrack"></div>
+  </div>
+
   <main>
+
+    <!-- ABA SOBRE -->
     <section id="sobre" class="tab active">
-      <div class="content">
-        <h2 class="titulo"><i class="fas fa-user fa-bounce"></i> Sobre Mim</h2>
-        <p>
-          Olá! Meu nome é <strong>Gustavo</strong> e sou desenvolvedor front-end apaixonado por criar experiências digitais interativas e responsivas. Trabalho com tecnologias modernas como <span class="highlight">HTML</span>, <span class="highlight">CSS</span>, <span class="highlight">JavaScript</span> e muito mais.
-        </p>
-        <p>
-          Tenho foco em performance, design e acessibilidade. Curioso por natureza, estou sempre buscando evoluir minhas habilidades e contribuir para projetos criativos e inovadores.
-        </p>
-      </div>
-    </section>
 
-    <!-- Aba Projetos -->
-    <section id="projetos" class="tab">
-      <h2 class="titulo"><i class="fas fa-code fa-beat"></i> Projetos</h2>
-      <div class="cards" id="projetos-container">
-        <!-- Os projetos serão inseridos aqui pelo JavaScript -->
+      <div class="hero">
+        <div class="hero-left">
+          <div class="hero-tag">
+            <span class="status-dot"></span> Disponível para projetos
+          </div>
+          <h1 class="hero-name">
+            Gustavo<br>
+            <span class="hero-name-alt">Alves Alberti</span>
+          </h1>
+          <p class="hero-role">Desenvolvedor <span class="hl">Front-End</span></p>
+          <p class="hero-desc">
+            Transformo ideias em interfaces que funcionam de verdade —
+            com HTML, CSS e JavaScript. Foco em performance,
+            design e acessibilidade em cada detalhe.
+          </p>
+          <div class="hero-btns">
+            <button class="btn-primary" onclick="abrirAba('projetos', document.querySelectorAll('.nav-btn')[1])">Ver Projetos →</button>
+            <button class="btn-secondary" onclick="abrirAba('contato', document.querySelectorAll('.nav-btn')[3])">Fala comigo</button>
+          </div>
+        </div>
+        <div class="hero-right">
+          <div class="hero-card" onclick="heroCardClick()">
+            <div class="hero-card-inner" id="heroCardInner">
+              <div class="hero-card-front">
+                <div class="hc-emoji">🌐</div>
+                <div class="hc-name">Gustavo Alves Alberti</div>
+                <div class="hc-role">Front-End Developer</div>
+                <div class="hc-location">📍Cariacica-ES</div>
+                <div class="hc-hint">Clica aqui 👆</div>
+              </div>
+              <div class="hero-card-back">
+                <div class="hc-emoji">🚀</div>
+                <div class="hc-name">Open to Work</div>
+                <div class="hc-role">Projetos freelance,<br>full-time e colaborações</div>
+                <div class="hc-hint">Bora construir algo incrível?</div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-    </section>
 
-    <section id="contato" class="tab">
-      <div class="content">
-        <h2 class="titulo"><i class="fas fa-envelope fa-shake"></i> Contato</h2>
-        <p>Me encontre nas redes sociais abaixo:</p>
-        <div class="social modern-contact">
-          <a href="https://www.instagram.com/gustavoalberti_17/" target="_blank" class="btn instagram">
-            <i class="fab fa-instagram fa-beat-fade"></i>
-            <span>Instagram</span>
-          </a>
-          <a href="https://www.linkedin.com/in/gustavo-alves-alberti-21aa98325/" target="_blank" class="btn linkedin">
-            <i class="fab fa-linkedin fa-beat-fade"></i>
-            <span>LinkedIn</span>
-          <a href="https://github.com/gustaalves22" target="_blank" class="btn github">
-            <i class="fab fa-github fa-beat-fade"></i>
-            <span>GitHub</span>
-          </a>
-          </a>
+      <!-- FATOS -->
+      <div class="facts-section">
+        <h3 class="facts-title">// Fatos sobre mim e Curiosidades</h3>
+        <p class="facts-sub">Clique em cada card para descobrir</p>
+        <div class="facts-grid">
+
+          <div class="fact-card" onclick="flipCard(this)">
+            <div class="fact-inner">
+              <div class="fact-front">
+                <span class="fact-icon">🐛</span>
+                <span class="fact-label">Bugs</span>
+              </div>
+              <div class="fact-back">
+                <span class="fact-back-emoji">🔍</span>
+                <p>Tecnicamente não são bugs — são <em>"comportamentos inesperados não documentados"</em>. Distinção muito importante.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="fact-card" onclick="flipCard(this)">
+            <div class="fact-inner">
+              <div class="fact-front">
+                <span class="fact-icon">🌐</span>
+                <span class="fact-label">Internet</span>
+              </div>
+              <div class="fact-back">
+                <span class="fact-back-emoji">🧠</span>
+                <p>O primeiro website do mundo ainda está no ar. Criado por Tim Berners-Lee em 1991, você pode visitar hoje mesmo.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="fact-card" onclick="flipCard(this)">
+            <div class="fact-inner">
+              <div class="fact-front">
+                <span class="fact-icon">💾</span>
+                <span class="fact-label">Código</span>
+              </div>
+              <div class="fact-back">
+                <span class="fact-back-emoji">📊</span>
+                <p>O Apollo 11 chegou à Lua com apenas 4KB de memória RAM. Seu navegador usa mais que isso só pra exibir um emoji.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="fact-card" onclick="flipCard(this)">
+            <div class="fact-inner">
+              <div class="fact-front">
+                <span class="fact-icon">🏃</span>
+                <span class="fact-label">Esportes</span>
+              </div>
+              <div class="fact-back">
+                <span class="fact-back-emoji">🏅</span>
+                <p>Esportes fazem parte da rotina — dentro e fora da tela. A disciplina do treino e a do código se parecem mais do que parece.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="fact-card" onclick="flipCard(this)">
+            <div class="fact-inner">
+              <div class="fact-front">
+                <span class="fact-icon">🔢</span>
+                <span class="fact-label">Binário</span>
+              </div>
+              <div class="fact-back">
+                <span class="fact-back-emoji">💡</span>
+                <p>Existem 10 tipos de pessoas no mundo: as que entendem binário e as que não entendem. Clássico da computação.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="fact-card" onclick="flipCard(this)">
+            <div class="fact-inner">
+              <div class="fact-front">
+                <span class="fact-icon">🎯</span>
+                <span class="fact-label">Foco</span>
+              </div>
+              <div class="fact-back">
+                <span class="fact-back-emoji">💪</span>
+                <p>Performance, design e acessibilidade. Se não carrega em 3 segundos, já errei antes mesmo de começar.</p>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
+
+    <!-- ABA PROJETOS -->
+    <section id="projetos" class="tab">
+      <h2 class="titulo">Projetos</h2>
+      <p class="tab-subtitle">Coisas que eu fiz e não queimei o computador fazendo</p>
+      <div class="cards" id="projetos-container"></div>
+    </section>
+
+    <!-- ABA SKILLS -->
+    <section id="skills" class="tab">
+      <h2 class="titulo">Habilidades</h2>
+      <p class="tab-subtitle">O que eu sei fazer</p>
+      <div class="skills-grid" id="skillsGrid"></div>
+      <div class="skill-disclaimer">* Porcentagens baseadas em autoavaliação honesta. Pode conter viés.</div>
+    </section>
+
+    <!-- ABA CONTATO -->
+    <section id="contato" class="tab">
+      <h2 class="titulo">Contato</h2>
+      <p class="tab-subtitle">Me chama! Respondo em até 24h</p>
+      <div class="contact-grid">
+        <a href="https://www.instagram.com/gustavoalberti_17/" target="_blank" class="contact-card instagram">
+          <span class="cc-icon">📸</span>
+          <span class="cc-name">Instagram</span>
+          <span class="cc-handle">@gustavoalberti_17</span>
+          <span class="cc-arrow">→</span>
+        </a>
+        <a href="https://www.linkedin.com/in/gustavo-alves-alberti-21aa98325/" target="_blank" class="contact-card linkedin">
+          <span class="cc-icon">💼</span>
+          <span class="cc-name">LinkedIn</span>
+          <span class="cc-handle">Gustavo Alves Alberti</span>
+          <span class="cc-arrow">→</span>
+        </a>
+        <a href="https://github.com/gustaalves22" target="_blank" class="contact-card github">
+          <span class="cc-icon">🐙</span>
+          <span class="cc-name">GitHub</span>
+          <span class="cc-handle">gustaalves22</span>
+          <span class="cc-arrow">→</span>
+        </a>
+      </div>
+    </section>
+
   </main>
 
+  <div id="toast" class="toast hidden"></div>
+
   <footer>
-    <p>&copy; 2025 Gustavo alves. Todos os direitos reservados.</p>
+    <p>Feito com 💻 por <strong>Gustavo Alves Alberti</strong> &copy; 2026</p>
+    <p class="footer-small">Nenhum bug foi maltratado na produção deste portfólio*</p>
+    <p class="footer-tiny">*mentira</p>
   </footer>
 
   <script src="script.js"></script>
