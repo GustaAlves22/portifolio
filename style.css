@@ -377,6 +377,7 @@ main {
 }
 .contact-card:hover { transform: translateY(-5px); }
 .contact-card.instagram:hover { border-color: #e1306c; }
+.contact-card.whatsapp:hover { border-color: #25d366; }
 .contact-card.linkedin:hover  { border-color: #0077b5; }
 .contact-card.github:hover    { border-color: #aaa; }
 .cc-icon   { font-size: 1.8rem; }

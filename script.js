@@ -61,6 +61,13 @@ const projetos = [
     link: 'https://gustaalves22.github.io/listadetarefas/',
   },
   {
+    emoji: '🧠',
+    titulo: 'Quiz Interativo',
+    desc: 'Quiz de perguntas interativas com lógica de respostas e feedback em tempo real. Um bom desafio para treinar JavaScript.',
+    tags: ['JavaScript', 'HTML', 'CSS'],
+    link: 'https://gustaalves22.github.io/quiz/',
+  },
+  {
     emoji: '🔭',
     titulo: 'Em breve...',
     desc: 'Novo projeto em desenvolvimento. Fique de olho no GitHub para acompanhar o que vem por aí.',
