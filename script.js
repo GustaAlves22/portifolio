@@ -1,13 +1,4 @@
 // ============================================
-//  CURSOR
-// ============================================
-const cursorBall = document.getElementById('cursor-ball');
-document.addEventListener('mousemove', e => {
-  cursorBall.style.left = e.clientX + 'px';
-  cursorBall.style.top  = e.clientY + 'px';
-});
-
-// ============================================
 //  TICKER
 // ============================================
 const msgs = [
@@ -39,7 +30,6 @@ function abrirAba(id, btn) {
   document.getElementById(id).classList.add('active');
   if (btn) btn.classList.add('active-btn');
   window.scrollTo({ top: 0, behavior: 'smooth' });
-  if (id === 'skills') setTimeout(animateSkillBars, 100);
 }
 
 // ============================================
@@ -68,7 +58,14 @@ const projetos = [
     link: 'https://gustaalves22.github.io/quiz/',
   },
   {
-    emoji: '🔭',
+    emoji: '🚦',
+    titulo: 'Quiz de Trânsito — Maio Amarelo',
+    desc: 'Quiz educativo sobre segurança no trânsito criado para o Maio Amarelo. Aprenda de forma interativa e divertida.',
+    tags: ['JavaScript', 'HTML', 'CSS'],
+    link: 'https://gustaalves22.github.io/trabalho-maio-amarelo/',
+  },
+  {
+    emoji: '��',
     titulo: 'Em breve...',
     desc: 'Novo projeto em desenvolvimento. Fique de olho no GitHub para acompanhar o que vem por aí.',
     tags: ['Em breve'],
@@ -86,43 +83,6 @@ function renderProjetos() {
       <a href="${p.link}" target="_blank">Ver Projeto →</a>
     </div>
   `).join('');
-}
-
-// ============================================
-//  SKILLS
-// ============================================
-const skills = [
-  { icon: '🌐', name: 'HTML',            percent: 88 },
-  { icon: '🎨', name: 'CSS',             percent: 82 },
-  { icon: '⚡', name: 'JavaScript',      percent: 75 },
-  { icon: '🔗', name: 'Git / GitHub',    percent: 70 },
-  { icon: '📱', name: 'Responsividade',  percent: 80 },
-  { icon: '🎯', name: 'UI / UX Feeling', percent: 77 },
-  { icon: '⚙️', name: 'Lógica & Algo.',  percent: 68 },
-  { icon: '🐛', name: 'Debug',           percent: 72 },
-];
-
-function renderSkills() {
-  document.getElementById('skillsGrid').innerHTML = skills.map(s => `
-    <div class="skill-item">
-      <div class="skill-header">
-        <div class="skill-label">
-          <span class="skill-icon">${s.icon}</span>
-          <span>${s.name}</span>
-        </div>
-        <span class="skill-percent">${s.percent}%</span>
-      </div>
-      <div class="skill-bar-bg">
-        <div class="skill-bar-fill" data-target="${s.percent}"></div>
-      </div>
-    </div>
-  `).join('');
-}
-
-function animateSkillBars() {
-  document.querySelectorAll('.skill-bar-fill').forEach((bar, i) => {
-    setTimeout(() => { bar.style.width = bar.dataset.target + '%'; }, i * 80);
-  });
 }
 
 // ============================================
@@ -144,5 +104,4 @@ function flipCard(card) {
 // ============================================
 window.addEventListener('DOMContentLoaded', () => {
   renderProjetos();
-  renderSkills();
 });

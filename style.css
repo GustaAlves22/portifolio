@@ -30,24 +30,6 @@ body {
   color: var(--text);
   min-height: 100vh;
   overflow-x: hidden;
-  cursor: none;
-}
-
-/* ===========================
-   CURSOR
-=========================== */
-#cursor-ball {
-  width: 18px; height: 18px;
-  border: 1.5px solid var(--accent);
-  border-radius: 50%;
-  position: fixed; pointer-events: none; z-index: 9999;
-  transition: transform 0.12s ease, background 0.2s ease, width 0.15s, height 0.15s;
-  transform: translate(-50%, -50%);
-}
-body:has(a:hover) #cursor-ball,
-body:has(button:hover) #cursor-ball {
-  transform: translate(-50%, -50%) scale(2.2);
-  background: rgba(240,240,240,0.08);
 }
 
 /* ===========================
